@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "The Peak Font 隨峰體 Beta";
+  src: local("The Peak Font 隨峰體 Beta"),
+   url(./ThePeakFontBeta_V0_101.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Autour One";
+  src: local("Autour One"),
+   url(./AutourOne-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "HanWangHeiHeavy";
+  src: local("HanWangHeiHeavy"),
+   url(./AutourOne-Regular.ttf) format("truetype");
+}
+
+.row {
+  display: flex;
+
+  .column {
+    display: inline-block;
+    max-height: 100vh;
+    height: 100vh;
+
+    @configuration-column-width: 30rem;
+    &.configuration-column {
+      width: @configuration-column-width;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    &.preview-column {
+      width: calc(100vw - @configuration-column-width);
+      overflow-y: auto;
+      overflow-x: auto;
+    }
+  }
+}

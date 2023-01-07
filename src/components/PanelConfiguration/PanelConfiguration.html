@@ -1,0 +1,71 @@
+<div class="ConfigurationPanel ui form">
+  
+  <div class="controllers">
+    <div class="field">
+      <label for="title">
+        {{ $t('Title') }}
+      </label>
+      <textarea id="title" 
+        v-model="db.localConfig.title"></textarea>
+    </div>
+
+    <div class="field">
+      <label for="titleFont">
+        {{ $t('Title Font') }}
+      </label>
+      <input type="text" v-model="db.localConfig.titleFont" />
+    </div>
+
+    <div class="field">
+      <label for="tags">
+        {{ $t('Tags') }}
+      </label>
+      <textarea v-model="db.localConfig.tags"></textarea>
+    </div>
+
+    <div class="field">
+      <label for="tagFont">
+        {{ $t('Tag Font') }}
+      </label>
+      <input type="text" v-model="db.localConfig.tagFont" />
+    </div>
+
+    <div class="field">
+      <label for="backgroundImage">
+        {{ $t('Background Image') }}
+      </label>
+      <input type="url" v-model="db.localConfig.backgroundImage" />
+    </div>
+
+    <div class="field">
+      <label for="canvasSize">
+        {{ $t('Canvas Size') }}
+      </label>
+      <input type="number" v-model="db.localConfig.canvasSize" />
+    </div>
+  </div>
+  <div class="save">
+    <div class="fields">
+      <div class="field">
+        <button type="button"
+          class="ui fluid labeled icon button"
+          :class="{'negative': db.localConfig.previewDebug}"
+          @click="db.localConfig.previewDebug = !db.localConfig.previewDebug">
+          <i class="icon"
+            :class="{'bug': db.localConfig.previewDebug, 'eye': !db.localConfig.previewDebug }" />
+          {{ $t('Debug') }}
+        </button>
+      </div>
+      <div class="field">
+        <button type="button"
+          class="ui fluid positive labeled icon button"
+          @click="save">
+          <i class="save icon" />
+          {{ $t('Save') }}
+        </button>
+      </div>
+    </div>
+  </div>
+    
+
+</div>

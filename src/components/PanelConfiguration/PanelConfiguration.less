@@ -1,0 +1,26 @@
+.ConfigurationPanel {
+  @save-height: 5rem;
+  .controllers {
+    height: calc(100vh - @save-height);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .save {
+    text-align: center;
+
+    // height: @save-height;
+    // vertical-align: bottom;
+    .fields {
+      display: block;
+      position: fixed !important;
+      bottom: 0;
+      width: 30rem;
+
+      .field {
+        width: calc(50% - 0.5rem) !important;
+        display: inline-block !important;
+      }
+    }
+  }
+}

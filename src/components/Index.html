@@ -1,0 +1,23 @@
+<div class="Index"
+  v-show="db.config.inited">
+
+  <DataManager 
+    ref="DataManager"
+    :db="db">
+  </DataManager>
+
+  <div class="row">
+    <div class="column configuration-column">
+      <PanelConfiguration 
+        ref="PanelConfiguration"
+        :db="db">
+      </PanelConfiguration>
+    </div>
+    <div class="column preview-column">
+      <PanelPreview 
+        ref="PanelPreview"
+        :db="db">
+      </PanelPreview>
+    </div>
+  </div>
+</div>

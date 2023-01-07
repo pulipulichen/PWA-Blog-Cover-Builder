@@ -1,0 +1,48 @@
+<div class="PanelPreview"
+  :class="{'debug': db.localConfig.previewDebug}">
+  <div class="canvas-container">
+    <div class="canvas"
+      :style="computedStyle"
+      ref="Canvas">
+      
+      <div class="cover-image"
+        :style="computedCoverImageStyle">
+        <div class="tag-container" v-for="tag in tags">
+          <span class="tag"
+            :style="computedTagStyle">
+            #{{ tag }}
+          </span>
+            
+        </div>
+      </div>
+
+      <div class="avatar-container-base">
+        <div class="avatar-container">
+          <div class="avatar-icon"></div>
+        </div>
+      </div>
+
+      <div class="cover-title">
+        <FitText 
+            class="fitty" 
+            :text="db.localConfig.title"
+            :style="computedCoverTitleStyle"></FitText>
+      </div>
+
+      <div class="cover-badge">
+        <div class="column">
+          <i class="blogger icon"></i>
+          blog.pulipuli.info
+        </div>
+        <div class="column">
+          <i class="facebook icon"></i>
+          pulipuli.blogspot
+        </div>
+      </div>
+
+        
+    </div>
+  </div>
+  <img ref="PreviewImage"
+    class="preview-image" />
+</div>

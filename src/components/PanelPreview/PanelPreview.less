@@ -1,0 +1,151 @@
+@basic-border: 10px solid white;
+
+@cover-image-height: 65%;
+@cover-title-height: 30%;
+@cover-badge-height: 5%;
+
+@component-margin: 10px;
+@title-color: rgb(115, 109, 97);
+@tag-font-size: 40px;
+
+.PanelPreview {
+
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  
+  .canvas-container {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .canvas {
+    padding: 50px;
+
+    background-position: center;
+    background-size: cover;
+
+    .cover-image {
+      border: @basic-border;
+      height: @cover-image-height;
+
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      text-align: right;
+
+      padding: 50px;
+
+      .tag-container {
+        line-height: 100%;
+      }
+
+      .tag {
+        border: @basic-border;
+        padding: @tag-font-size * 0.8 @tag-font-size * 0.4;
+        background-color: @title-color;
+        border-radius: @tag-font-size * 0.6;
+        color: white;
+        // display: block;
+        width: fit-content;
+        margin-bottom: @component-margin * 1.5;
+        font-size: @tag-font-size;
+
+        display: inline-block;
+      }
+    }
+
+    .cover-title {
+      border: @basic-border;
+      height: calc(@cover-title-height - @component-margin);
+      margin-top: @component-margin;
+
+      display: flex;
+      align-items: center;
+      @cover-title-padding: 30px;
+      padding: @cover-title-padding;
+      // justify-content: center;
+
+      .fitty {
+        color: @title-color !important;
+        // display: block !important;
+        // width: 100%;
+        // height: 100%;
+      }
+    }
+
+    .avatar-container-base {
+      text-align: center;
+
+      .avatar-container {
+        // position: absolute;
+        display: inline-block;
+        max-height: 0;
+
+        .avatar-icon {
+          position: relative;
+          @avatar-size: 300px;
+
+          top: -0.7 * @avatar-size;
+
+          background-image: url(./author.png);
+          width: @avatar-size;
+          height: @avatar-size;
+          background-size: contain;
+          background-position: center center;
+          border-radius: @avatar-size / 2;
+          border: @basic-border;
+        }
+      }
+    }
+  }
+   
+  .preview-image {
+    max-width: 100%;
+    width: auto;
+
+    max-height: 100%;
+    height: auto;
+
+    // border: 1px solid red;
+  }
+
+  &.debug {
+    .canvas-container {
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+    }    
+
+    .preview-image {
+      display: none;
+    }
+  }
+}
+
+.cover-badge {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  height: calc(@cover-badge-height - @component-margin);
+
+  margin-top: @component-margin;
+  padding: 30px 300px;
+
+  .column {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content:center;
+
+    color: @title-color;
+    font-size: 40px;
+
+    font-family: "HanWangHeiHeavy";
+    line-height: 100%;
+  }
+}
