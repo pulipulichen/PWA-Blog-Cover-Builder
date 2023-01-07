@@ -13,37 +13,88 @@
       <label for="titleFont">
         {{ $t('Title Font') }}
       </label>
-      <input type="text" v-model="db.localConfig.titleFont" />
+      <input type="text" id="titleFont" 
+        v-model="db.localConfig.titleFont" />
     </div>
 
     <div class="field">
       <label for="tags">
         {{ $t('Tags') }}
       </label>
-      <textarea v-model="db.localConfig.tags"></textarea>
+      <textarea id="tags" 
+        v-model="db.localConfig.tags"></textarea>
     </div>
 
     <div class="field">
       <label for="tagFont">
         {{ $t('Tag Font') }}
       </label>
-      <input type="text" v-model="db.localConfig.tagFont" />
+      <input type="text" id="tagFont" 
+        v-model="db.localConfig.tagFont" />
     </div>
 
     <div class="field">
       <label for="backgroundImage">
         {{ $t('Background Image') }}
       </label>
-      <input type="url" v-model="db.localConfig.backgroundImage" />
+      <input type="url" id="backgroundImage" 
+        v-model="db.localConfig.backgroundImage" />
+    </div>
+
+    <div class="field">
+      <label for="coverBackgroundPosition">
+        {{ $t('Bakcground Position') }}: {{ Math.round(Number(db.localConfig.coverBackgroundPosition)* 100)  }}%
+      </label>
+      <input type="range" min="0" max="1" step="0.1" 
+        id="coverBackgroundPosition"
+        v-model="db.localConfig.coverBackgroundPosition" /> 
+      <div class="ui fluid buttons">
+        <button type="button"
+          v-for="position in positionList"
+          class="ui button"
+          :class="{'positive disabled': Number(db.localConfig.coverBackgroundPosition) === position}"
+          @click="db.localConfig.coverBackgroundPosition = position">{{ position * 100 }}%</button>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="coverBackgroundColor">
+        {{ $t('Image Background Color') }}
+      </label>
+      <input type="text" id="coverBackgroundColor" 
+        v-model="db.localConfig.coverBackgroundColor" />
     </div>
 
     <div class="field">
       <label for="canvasSize">
         {{ $t('Canvas Size') }}
       </label>
-      <input type="number" v-model="db.localConfig.canvasSize" />
+      <input type="number" id="canvasSize" 
+        v-model="db.localConfig.canvasSize" />
     </div>
+
+    <div class="field"
+      v-show="db.localConfig.previewDebug">
+      <label for="debugZoom">
+        {{ $t('Zoom') }}: {{ Math.round(Number(db.localConfig.debugZoom)* 100)  }}%
+      </label>
+      <input type="range" min="0.2" max="2" step="0.1" 
+        id="debugZoom"
+        v-model="db.localConfig.debugZoom" /> 
+      <div class="ui fluid buttons">
+        <button type="button"
+          v-for="scale in scaleList"
+          class="ui button"
+          :class="{'positive disabled': Number(db.localConfig.debugZoom) === scale}"
+          @click="db.localConfig.debugZoom = scale">{{ scale * 100 }}%</button>
+      </div>
+    </div>
+
   </div>
+
+
+  <!-- ============================ -->
+
   <div class="save">
     <div class="fields">
       <div class="field">
@@ -58,7 +109,8 @@
       </div>
       <div class="field">
         <button type="button"
-          class="ui fluid positive labeled icon button"
+          class="ui fluid labeled icon button"
+          :class="{disabled: db.localConfig.previewDebug, positive: !db.localConfig.previewDebug}"
           @click="save">
           <i class="save icon" />
           {{ $t('Save') }}

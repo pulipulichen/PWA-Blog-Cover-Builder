@@ -20,5 +20,15 @@ export default {
     document.body.removeChild(element);
 
     return true
+  },
+  readBase64: function (file) {
+    return new Promise(function (resolve, reject) {
+      let fr = new FileReader();
+        
+      fr.onloadend = () => {
+        resolve(fr.result)
+      }
+      fr.readAsDataURL(file)
+    })
   }
 }

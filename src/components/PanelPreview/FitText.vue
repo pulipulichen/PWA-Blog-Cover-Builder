@@ -18,7 +18,7 @@ export default {
         return {
           minSize: 16,
           maxSize: 512,
-          multiLine: false
+          multiLine: true
         };
       }
     }
@@ -42,17 +42,9 @@ export default {
   methods: {
     init () {
       try {
-        // console.log(this.$el.clientWidth)
-        // console.log(this.$refs.fit.parentNode)
         if (this.$el.clientWidth === 0) {
           throw new Error('wait')
         }
-        // console.log(this.$el.clientWidth)
-        // window.e = this.$el
-        // window.f = this.$refs.fit
-        // window.q = this.$el.querySelector('.fit')
-        // this.$refs.fit.parentNode = this.$el
-        // return false
         this.$_fitty = fitty(this.$refs.fit, this.options);
 
         setTimeout(() => {
@@ -78,8 +70,9 @@ export default {
 
 .fit-container {
   width: 100%;
-  height: 100%;
+  height: 100px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 </style>

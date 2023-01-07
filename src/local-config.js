@@ -10,7 +10,10 @@ Tuxedo`,
   tagFont: `Autour One`,
   backgroundImage: `./assets/background/bulletin-board-325721.jpg`,
   coverImage: `./assets/cover/white-faced-heron-7469267_960_720.jpg`,
+  coverBackgroundColor: '#FFF',
+  coverBackgroundPosition: 0.5,
   previewDebug: false,
+  debugZoom: 0.5,
 }
 
 // ----------------------------------------------------------------

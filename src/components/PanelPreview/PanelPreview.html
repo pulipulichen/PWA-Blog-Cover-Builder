@@ -2,7 +2,7 @@
   :class="{'debug': db.localConfig.previewDebug}">
   <div class="canvas-container">
     <div class="canvas"
-      :style="computedStyle"
+      :style="computedCanvasStyle"
       ref="Canvas">
       
       <div class="cover-image"
@@ -26,17 +26,19 @@
         <FitText 
             class="fitty" 
             :text="db.localConfig.title"
-            :style="computedCoverTitleStyle"></FitText>
+            :style="computedCoverTitleStyle"
+            :options="computedFittyOptions"></FitText>
       </div>
 
       <div class="cover-badge">
         <div class="column">
           <i class="blogger icon"></i>
+          <i class="facebook icon"></i>
           blog.pulipuli.info
         </div>
         <div class="column">
-          <i class="facebook icon"></i>
-          pulipuli.blogspot
+          <i class="instagram icon"></i>
+          pulipulichen
         </div>
       </div>
 
@@ -44,5 +46,16 @@
     </div>
   </div>
   <img ref="PreviewImage"
-    class="preview-image" />
+    class="preview-image"
+    v-show="!isPreviewRendering"
+    @dblclick="save" />
+  <img class="preview-image loading"
+    src="./pudding-crop.gif"
+    v-show="isPreviewRendering" />
+
+
+  <img :src="computedCoverImageSrc"
+    class="cover-image-detector"
+    @load="detectCoverImageSize" />
+
 </div>

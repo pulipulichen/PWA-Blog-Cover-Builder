@@ -1,10 +1,18 @@
 <div class="Index"
-  v-show="db.config.inited">
+  v-show="db.config.inited"
+  @paste="onPaste">
 
   <DataManager 
     ref="DataManager"
     :db="db">
   </DataManager>
+
+  <DropZone 
+    ref="DropZone"
+    :db="db"
+    @onDropString="onDropString"
+    @onDropFiles="onDropFiles">
+  </DropZone>
 
   <div class="row">
     <div class="column configuration-column">

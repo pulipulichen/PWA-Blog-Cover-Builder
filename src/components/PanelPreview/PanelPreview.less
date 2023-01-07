@@ -1,12 +1,16 @@
 @basic-border: 10px solid white;
+@canvas-padding: 100px;
 
 @cover-image-height: 65%;
-@cover-title-height: 30%;
-@cover-badge-height: 5%;
+@cover-title-height: 25%;
+@cover-badge-height: 10%;
 
 @component-margin: 10px;
 @title-color: rgb(115, 109, 97);
 @tag-font-size: 40px;
+@avatar-size: 300px;
+
+@cover-title-padding: 100px;
 
 .PanelPreview {
 
@@ -21,22 +25,22 @@
   }
 
   .canvas {
-    padding: 50px;
+    padding: @canvas-padding;
 
-    background-position: center;
+    // background-position: center;
     background-size: cover;
 
     .cover-image {
       border: @basic-border;
       height: @cover-image-height;
 
-      background-position: center;
+      // background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
 
       text-align: right;
 
-      padding: 50px;
+      padding: @canvas-padding / 2;
 
       .tag-container {
         line-height: 100%;
@@ -64,12 +68,17 @@
 
       display: flex;
       align-items: center;
-      @cover-title-padding: 30px;
-      padding: @cover-title-padding;
+      padding-top: @cover-title-padding * 1.2;
+      padding-bottom: @cover-title-padding;
+      padding-left: @cover-title-padding;
+      padding-right: @cover-title-padding;
+
+      background-color: rgba(255, 255, 255, 0.7);
       // justify-content: center;
 
       .fitty {
         color: @title-color !important;
+        // font-weight: bold;
         // display: block !important;
         // width: 100%;
         // height: 100%;
@@ -86,7 +95,6 @@
 
         .avatar-icon {
           position: relative;
-          @avatar-size: 300px;
 
           top: -0.7 * @avatar-size;
 
@@ -109,7 +117,14 @@
     max-height: 100%;
     height: auto;
 
+    cursor: pointer;
     // border: 1px solid red;
+
+    &.loading {
+      margin: 10rem;
+      min-width: 10rem;
+      border-radius: 50%;
+    }
   }
 
   &.debug {
@@ -142,10 +157,19 @@
     align-items: center;
     justify-content:center;
 
-    color: @title-color;
+    // color: @title-color;
+    color: white;
+
     font-size: 40px;
 
     font-family: "HanWangHeiHeavy";
     line-height: 100%;
   }
+}
+
+.cover-image-detector {
+  position: fixed;
+  top: -100vh;
+  max-width: 10px;
+  height: auto;
 }
