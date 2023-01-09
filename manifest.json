@@ -1,10 +1,10 @@
 {
-  "name": "TODO LIST",
-  "short_name": "TODO",
+  "name": "Cover Builder",
+  "short_name": "Cover",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#E1F7F7",
-  "description": "A todo list used to integrated in Webpage Dashboard.",
+  "description": "A template to create a cover for the blog.",
   "icons": [{
     "src": "assets/favicon/favicon.png",
     "sizes": "512x512",

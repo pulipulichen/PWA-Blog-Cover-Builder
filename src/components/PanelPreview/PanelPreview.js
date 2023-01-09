@@ -88,6 +88,9 @@ let app = {
       if (tags.indexOf('#') > -1) {
         tags = tags.split('#').map(t => t.trim()).filter(t => t !== '')
       }
+      else if (tags.indexOf(',') > -1) {
+        tags = tags.split(',').map(t => t.trim()).filter(t => t !== '')
+      }
       else {
         tags = tags.split('\n').map(t => t.trim())
       }
@@ -104,7 +107,7 @@ let app = {
     computedFittyOptions() {
       return {
         minSize: 16,
-        maxSize: 160,
+        maxSize: 100,
         multiLine: false
       }
     }

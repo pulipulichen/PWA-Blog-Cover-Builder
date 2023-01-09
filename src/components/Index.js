@@ -21,8 +21,8 @@ let Index = {
   },
   methods: {
     onPaste (e) {
-      // console.log(e)
-      if (e.target === 'input' || e.target === 'textarea') {
+      let tagName = e.target.tagName.toLowerCase();
+      if (tagName === 'input' || tagName === 'textarea') {
         return false
       }
 
