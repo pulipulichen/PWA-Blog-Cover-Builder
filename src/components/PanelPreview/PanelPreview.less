@@ -148,10 +148,16 @@
   height: calc(@cover-badge-height - @component-margin);
 
   margin-top: @component-margin;
-  padding: 30px 300px;
+  padding: 30px 100px;
 
   .column {
-    width: 50%;
+    // &.main {
+      // width: 40%;
+    // }
+    // width: 30%;
+    width: fit-content;
+    margin-right: 2rem;
+    margin-left: 2rem;
     height: 100%;
 
     display: flex;
