@@ -22,7 +22,8 @@
         {{ $t('Tags') }}
       </label>
       <textarea id="tags" 
-        v-model="db.localConfig.tags"></textarea>
+        v-model="db.localConfig.tags"
+        onfocus="this.select()"></textarea>
     </div>
 
     <div class="field">
