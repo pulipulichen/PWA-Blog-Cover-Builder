@@ -34,6 +34,16 @@
     </div>
 
     <div class="field">
+      <label for="tagPosition">
+        {{ $t('Tag Position') }}
+      </label>
+      <select v-model="db.localConfig.tagPosition">
+        <option v-for="item in tagPositionList"
+          :value="item">{{ $t(item) }}</option>
+      </select>
+    </div>
+
+    <div class="field">
       <label for="backgroundImage">
         {{ $t('Background Image') }}
       </label>

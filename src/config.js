@@ -2,7 +2,7 @@ let appName = 'PWA-Blog-Cover-Builder'
 
 let config = {
   version: '20230107-1707',
-  coverImageBase64: null
+  // coverImageBase64: null
 }
 
 // ----------------------------------------------------------------

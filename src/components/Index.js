@@ -31,7 +31,7 @@ let Index = {
         let fr = new FileReader();
         
         fr.onloadend = () => {
-          this.db.config.coverImageBase64 = fr.result
+          this.db.localConfig.coverImageBase64 = fr.result
         }
         fr.readAsDataURL(data)
       }
@@ -43,7 +43,7 @@ let Index = {
       this.db.localConfig.title = str
     },
     onDropFiles: async function (files) {
-      this.db.config.coverImageBase64 = await this.db.utils.FileUtils.readBase64(files[0])
+      this.db.localConfig.coverImageBase64 = await this.db.utils.FileUtils.readBase64(files[0])
     }
   }
 }

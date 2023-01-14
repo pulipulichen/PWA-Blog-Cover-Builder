@@ -20,7 +20,7 @@ let app = {
     }
   }, 
   watch: {
-    'db.config.coverImageBase64' () {
+    'db.localConfig.coverImageBase64' () {
       this.updatePreviewImage()
     }
   },
@@ -49,8 +49,8 @@ let app = {
       return style
     },
     computedCoverImageSrc () {
-      if (this.db.config.coverImageBase64) {
-        return this.db.config.coverImageBase64
+      if (this.db.localConfig.coverImageBase64) {
+        return this.db.localConfig.coverImageBase64
       }
       else {
         return './assets/cover/white-faced-heron-7469267_960_720.jpg'
@@ -70,6 +70,11 @@ let app = {
       }
       else {
         style['background-position'] = `center ${position}`
+      }
+
+      if (this.db.localConfig.tagPosition === 'right') {
+        style['text-align'] = 'right'
+        // text-align: right;
       }
       
       return style

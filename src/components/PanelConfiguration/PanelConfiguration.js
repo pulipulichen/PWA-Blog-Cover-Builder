@@ -7,7 +7,8 @@ let app = {
     this.$i18n.locale = this.db.localConfig.locale
     return {
       scaleList: [0.5, 1, 2],
-      positionList: [0, 0.5, 1]
+      positionList: [0, 0.5, 1],
+      tagPositionList: ['right', 'left']
     }
   },
   watch: {
