@@ -119,7 +119,7 @@ let app = {
         tags = tags.split(',').map(t => t.trim()).filter(t => t !== '')
       }
       else {
-        tags = tags.split('\n').map(t => t.trim())
+        tags = tags.split('\n').map(t => t.trim()).filter(t => t !== '')
       }
       return tags
     },

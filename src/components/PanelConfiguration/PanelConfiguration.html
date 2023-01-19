@@ -104,6 +104,33 @@
       </div>
     </div>
 
+    <div class="field"
+      v-for="tool in Object.keys(tools)">
+      <a :href="computedPixabayURL"
+        v-if="tool === 'Pixabay'"
+        target="_blank"
+        class="ui fluid button"
+        @click.prevent.stop="popup(computedPixabayURL)">
+        <i class="image icon"></i>
+        {{ $t(tool) }}
+      </a>
+      <a :href="computedGooglePictureURL"
+        v-else-if="tool === 'Google Picture'"
+        target="_blank"
+        class="ui fluid button"
+        @click.prevent.stop="popup(computedGooglePictureURL)">
+        <i class="image icon"></i>
+        {{ $t(tool) }}
+      </a>
+      <a :href="tools[tool]"
+        v-else
+        target="_blank"
+        class="ui fluid button"
+        @click.prevent.stop="popup(tools[tool])">
+        {{ $t(tool) }}
+      </a>
+    </div>
+
   </div>
 
 
