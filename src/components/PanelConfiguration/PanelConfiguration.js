@@ -26,9 +26,10 @@ let app = {
       clearTimeout(this.tagsTimer)
 
       this.tagsTimer = setTimeout(() => {
-        let tags = db.localConfig.tags.trim()
+        let tags = this.db.localConfig.tags.trim()
+        console.log(tags)
         if (tags.startsWith('#') && tags.indexOf('\n') === -1) {
-          db.localConfig.tags = tags.split('#')
+          this.db.localConfig.tags = tags.split('#')
             .map(t => t.trim())
             .filter(t => t !== '')
             .join(', ')
