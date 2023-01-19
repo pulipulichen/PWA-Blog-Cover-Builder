@@ -7,12 +7,14 @@
       
       <div class="cover-image"
         :style="computedCoverImageStyle">
-        <div class="tag-container" v-for="tag in tags">
-          <span class="tag"
-            :style="computedTagStyle">
-            #{{ tag }}
-          </span>
-            
+        <div class="tags-wrapper"
+        :style="computedTagsWrapperStyle">
+          <div class="tag-container" v-for="tag in tags">
+            <span class="tag"
+              :style="computedTagStyle">
+              #{{ tag }}
+            </span>
+          </div>
         </div>
       </div>
 

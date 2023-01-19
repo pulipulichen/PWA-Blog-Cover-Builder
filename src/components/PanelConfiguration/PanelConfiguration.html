@@ -40,7 +40,10 @@
       </label>
       <select v-model="db.localConfig.tagPosition">
         <option v-for="item in tagPositionList"
-          :value="item">{{ $t(item) }}</option>
+          :value="item">
+          {{ tagPositionListIcon[item] }}
+          {{ $t(item) }}
+        </option>
       </select>
     </div>
 

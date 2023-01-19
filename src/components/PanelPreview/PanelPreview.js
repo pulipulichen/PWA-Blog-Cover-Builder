@@ -72,11 +72,33 @@ let app = {
         style['background-position'] = `center ${position}`
       }
 
-      if (this.db.localConfig.tagPosition === 'right') {
+      if (this.db.localConfig.tagPosition === 'top-right') {
         style['text-align'] = 'right'
         // text-align: right;
       }
+      else if (this.db.localConfig.tagPosition === 'bottom-right') {
+        style['display'] = 'flex'
+        style['align-items'] = 'flex-end'
+        style['justify-content'] = 'flex-end'
+        // text-align: right;
+      }
+      else if (this.db.localConfig.tagPosition === 'bottom-left') {
+        style['display'] = 'flex'
+        style['align-items'] = 'flex-end'
+        // text-align: right;
+      }
       
+      return style
+    },
+    computedTagsWrapperStyle () {
+      let style = {}
+      let localConfig = this.db.localConfig
+
+      if (this.db.localConfig.tagPosition === 'bottom-right') {
+        style['text-align'] = 'right'
+        // text-align: right;
+      }
+
       return style
     },
     computedCoverTitleStyle () {
