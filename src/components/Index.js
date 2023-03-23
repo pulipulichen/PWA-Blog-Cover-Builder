@@ -18,6 +18,9 @@ let Index = {
   watch: {
   },
   mounted() {
+    setTimeout(() => {
+      this.db.localConfig.previewDebug = true
+    }, 1000)
   },
   methods: {
     onPaste (e) {
