@@ -8,7 +8,7 @@ GraphicCardDriver
 Nvidia
 Tuxedo`,
   tagFont: `Autour One`,
-  tagPosition: 'right',
+  tagPosition: 'top-right',
   backgroundImage: `./assets/background/bulletin-board-325721.jpg`,
   coverImage: `./assets/cover/white-faced-heron-7469267_960_720.jpg`,
   coverImageBase64: null,
