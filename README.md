@@ -19,3 +19,11 @@ https://pulipulichen.github.io/PWA-Blog-Cover-Builder/
 - **Vue.js**: MVVM網頁框架。
 - **Sementic UI**: 現代化RWD介面。
 - **dom-to-image-more**: 將網頁元素轉換成圖片。
+
+# Citation
+
+Chen, Y.-T. (2024). *PWA-Blog-Cover-Builder* (20240625.005109) [Computer software]. Zenodo. [https://doi.org/10.5281/ZENODO.12519278](https://doi.org/10.5281/ZENODO.12519278)
+
+# Articles
+
+- [Blogger Editor更新 / Update Blogger Editor](https://blog.pulipuli.info/2023/06/blog-post_320.html)
