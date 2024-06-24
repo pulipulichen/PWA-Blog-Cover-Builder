@@ -1,7 +1,7 @@
 {
   "name": "PWA-Blog-Cover-Builder",
   "version": "1.0.0",
-  "description": "A todo list used to integrated in Webpage Dashboard.",
+  "description": "A tool for creating the cover of the Pulipuli Chen's blog. You can upload images, set tags, and add text descriptions, making it easy to create cover images for blogs and social media.",
   "main": "index.js",
   "scripts": {
     "start": "bash ./docker-compose/d3.webpack-watch-build-production.sh",
@@ -13,7 +13,8 @@
     "d1.webpack-build-development": "bash ./docker-compose/d1.webpack-build-development.sh",
     "d2.webpack-watch-development": "bash ./docker-compose/d2.webpack-watch-development.sh",
     "d3.webpack-watch-build-production": "bash ./docker-compose/d3.webpack-watch-build-production.sh",
-    "d4.webpack-build-production": "bash ./docker-compose/d4.webpack-build-production.sh"
+    "d4.webpack-build-production": "bash ./docker-compose/d4.webpack-build-production.sh",
+    "tag": "./build/tag.sh"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,12 @@
   "keywords": [
     "Machine Learning"
   ],
-  "author": "Pulipuli Chen",
+  "author": {
+    "name": "Yung-Ting Chen",
+    "email": "blog@pulipuli.info",
+    "orcid": "https://orcid.org/0000-0003-3751-610X",
+    "url": "https://blog.pulipuli.info"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pulipulichen/PWA-Blog-Cover-Builder/issues"

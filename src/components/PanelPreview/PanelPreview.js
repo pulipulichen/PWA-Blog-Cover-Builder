@@ -65,6 +65,7 @@ let app = {
 
       // console.log(Number(localConfig.coverBackgroundPosition) * 100 + '%')
       let position = Number(localConfig.coverBackgroundPosition) * 100 + '%'
+      console.log('landscape: ', this.isCoverImageLandscape)
       if (this.isCoverImageLandscape) {
         style['background-position'] = `${position} center`
       }
@@ -190,7 +191,7 @@ let app = {
       let w = e.target.width
       let h = e.target.height
 
-      this.isCoverImageLandscape = (w > h)
+      this.isCoverImageLandscape = ((w / h) > 1.56)
     }
   }
 }
