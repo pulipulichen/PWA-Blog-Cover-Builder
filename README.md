@@ -1,4 +1,4 @@
-@TODO
+[![DOI](https://zenodo.org/badge/586190301.svg)](https://zenodo.org/doi/10.5281/zenodo.12519278)
 
 # PWA-Blog-Cover-Builder: 「布丁布丁吃什麼？」部落格封面的製作工具
 

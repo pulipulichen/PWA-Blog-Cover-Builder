@@ -34,6 +34,7 @@
     "url": "https://github.com/pulipulichen/PWA-Blog-Cover-Builder/issues"
   },
   "homepage": "https://github.com/pulipulichen/PWA-Blog-Cover-Builder#readme",
+  "doi": "10.5281/zenodo.12519278",
   "devDependencies": {
     "@babel/core": "7.5.5",
     "@babel/plugin-proposal-object-rest-spread": "7.5.5",

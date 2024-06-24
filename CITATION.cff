@@ -9,3 +9,6 @@ title: "PWA-Blog-Cover-Builder"
 license: "MIT"
 repository-code: "https://github.com/pulipulichen/PWA-Blog-Cover-Builder"
 abstract: "A tool for creating the cover of the Pulipuli Chen's blog. You can upload images, set tags, and add text descriptions, making it easy to create cover images for blogs and social media."
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.12519278
