@@ -10,12 +10,15 @@ Tuxedo`,
   tagFont: `Autour One`,
   tagPosition: 'top-right',
   backgroundImage: `./assets/background/bulletin-board-325721.jpg`,
-  coverImage: `./assets/cover/white-faced-heron-7469267_960_720.jpg`,
+  // coverImage: `./assets/cover/white-faced-heron-7469267_960_720.jpg`,
+  coverImage: `./assets/cover/sissi.png`,
   coverImageBase64: null,
   coverBackgroundColor: '#FFF',
   coverBackgroundPosition: 0.5,
   previewDebug: false,
   debugZoom: 0.5,
+  onlyImageVerticalAlign: 'bottom',
+  onlyImageDirection: 'landscape',
 }
 
 // ----------------------------------------------------------------

@@ -1,6 +1,7 @@
 <div class="PanelPreview"
   :class="{'debug': db.localConfig.previewDebug}">
-  <div class="canvas-container">
+  <div class="canvas-container"
+    v-if="db.config.onlyImage === false">
     <div class="canvas"
       :style="computedCanvasStyle"
       ref="Canvas">
@@ -55,6 +56,28 @@
         
     </div>
   </div>
+
+  <!-- ===================================== -->
+
+  <div class="canvas-container"
+    v-if="db.config.onlyImage">
+    <div class="canvas"
+      :style="computedCanvasStyle"
+      ref="Canvas">
+      
+      <div class="cover-image only-image"
+        :style="computedCoverImageStyle">
+      </div>
+      <div class="cover-image-overlay"
+        :style="computedCoverImageOverlayStyle">
+        <img :src="this.computedCoverImageSrc"
+          :class="{'portrait': db.localConfig.onlyImageDirection === 'portrait'}" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================== -->
+
   <img ref="PreviewImage"
     class="preview-image"
     v-show="!isPreviewRendering"

@@ -2,6 +2,8 @@ let appName = 'PWA-Blog-Cover-Builder'
 
 let config = {
   version: '20230107-1707',
+
+  onlyImage: true,
   // coverImageBase64: null
 }
 

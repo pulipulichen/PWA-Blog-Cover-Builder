@@ -22,6 +22,17 @@ let app = {
         'Editor': 'https://pixlr.com/x/',
         'Pixabay': 'https://pixabay.com/',
         'Google Picture': 'https://www.google.com/search'
+      },
+      onlyImageVerticalAlignList: ['top', 'middle', 'bottom'],
+      onlyImageVerticalAlignListIcon: {
+        'top': '↑', 
+        'middle': '↕', 
+        'bottom': '↓'
+      },
+      onlyImageDirectionList: ['landscape', 'portrait'],
+      onlyImageDirectionListIcon: {
+        'landscape': '↔', 
+        'portrait': '↕'
       }
     }
   },

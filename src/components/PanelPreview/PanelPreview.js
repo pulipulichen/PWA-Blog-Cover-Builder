@@ -59,7 +59,11 @@ let app = {
     computedCoverImageStyle () {
       let style = {}
       let localConfig = this.db.localConfig
-      style['background-image'] = `url(${this.computedCoverImageSrc})`
+
+      style['background-image'] = `url()`
+      if (this.db.config.onlyImage === false) {
+        style['background-image'] = `url(${this.computedCoverImageSrc})`
+      }
 
       style['background-color'] = localConfig.coverBackgroundColor
 
@@ -71,6 +75,44 @@ let app = {
       }
       else {
         style['background-position'] = `center ${position}`
+      }
+
+      if (this.db.localConfig.tagPosition === 'top-right') {
+        style['text-align'] = 'right'
+        // text-align: right;
+      }
+      else if (this.db.localConfig.tagPosition === 'bottom-right') {
+        style['display'] = 'flex'
+        style['align-items'] = 'flex-end'
+        style['justify-content'] = 'flex-end'
+        // text-align: right;
+      }
+      else if (this.db.localConfig.tagPosition === 'bottom-left') {
+        style['display'] = 'flex'
+        style['align-items'] = 'flex-end'
+        // text-align: right;
+      }
+      
+      return style
+    },
+    computedCoverImageOverlayStyle () {
+      let style = {}
+      let localConfig = this.db.localConfig
+
+      
+      // style['background-image'] = `url(${this.computedCoverImageSrc})`
+
+      // style['background-color'] = localConfig.coverBackgroundColor
+
+      // console.log(Number(localConfig.coverBackgroundPosition) * 100 + '%')
+      let top = '-' + (1600 - (Number(localConfig.coverBackgroundPosition)* 100))  + 'px'
+      style['top'] = top
+
+      if (this.db.localConfig.onlyImageVerticalAlign === 'bottom') {
+        style['align-items'] = 'flex-end'
+      }
+      else if (this.db.localConfig.onlyImageVerticalAlign === 'top') {
+        style['align-items'] = 'flex-start'
       }
 
       if (this.db.localConfig.tagPosition === 'top-right') {

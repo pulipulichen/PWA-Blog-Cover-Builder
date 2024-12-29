@@ -30,9 +30,50 @@
     // background-position: center;
     background-size: cover;
 
+    .cover-image-overlay {
+      // border: 1px solid red;
+      position: relative;
+      // top: -1500px;
+      left: -100px;
+      width: 1600px;
+      height: 1600px;
+
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      overflow: hidden;
+
+      display: flex;
+      justify-content: center; /* Optional: Center horizontally */
+      align-items: center;  /* Align at the bottom */
+
+      img {
+        width: calc(100% - 100px);
+        height: auto;
+
+        &.portrait {
+          height: calc(100% - 100px);
+          width: auto;
+        }
+        // max-height: calc(100% - 100px);
+        // width: auto;
+
+        @image-border: 10px;
+        @image-border-blur: 3px;
+        filter: drop-shadow(@image-border 0 @image-border-blur white) 
+           drop-shadow(0 @image-border @image-border-blur white)
+           drop-shadow((@image-border*-1) 0 @image-border-blur white) 
+           drop-shadow(0 (@image-border*-1) @image-border-blur white);
+      }
+    }
+
     .cover-image {
       border: @basic-border;
       height: @cover-image-height;
+
+      &.only-image {
+        height: 100%;
+      }
 
       // background-position: center;
       background-size: cover;
