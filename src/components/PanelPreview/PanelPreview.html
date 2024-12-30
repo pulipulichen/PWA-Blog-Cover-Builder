@@ -1,7 +1,7 @@
 <div class="PanelPreview"
   :class="{'debug': db.localConfig.previewDebug}">
   <div class="canvas-container"
-    v-if="db.config.onlyImage === false">
+    v-if="db.localConfig.onlyImage === false">
     <div class="canvas"
       :style="computedCanvasStyle"
       ref="Canvas">

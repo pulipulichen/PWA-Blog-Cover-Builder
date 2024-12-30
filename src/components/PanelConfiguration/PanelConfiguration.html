@@ -109,13 +109,13 @@
       <div class="ui fluid buttons">
         <button type="button"
           class="ui button"
-          :class="{'positive': db.config.onlyImage}"
-          @click="db.config.onlyImage = !db.config.onlyImage">{{ $t('Only Image') }}</button>
+          :class="{'positive': db.localConfig.onlyImage}"
+          @click="db.localConfig.onlyImage = !db.localConfig.onlyImage">{{ $t('Only Image') }}</button>
       </div>
     </div>
 
     <div class="field"
-      v-if="db.config.onlyImage">
+      v-if="db.localConfig.onlyImage">
       <label for="imageVertialAligen">
         {{ $t('Image Vertial Align') }}
       </label>
@@ -130,7 +130,7 @@
     </div>
 
     <div class="field"
-      v-if="db.config.onlyImage">
+      v-if="db.localConfig.onlyImage">
       <label for="imageDirection">
         {{ $t('Image Direction') }}
       </label>

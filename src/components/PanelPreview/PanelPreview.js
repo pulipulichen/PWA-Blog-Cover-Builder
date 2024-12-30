@@ -61,7 +61,7 @@ let app = {
       let localConfig = this.db.localConfig
 
       style['background-image'] = `url()`
-      if (this.db.config.onlyImage === false) {
+      if (this.db.localConfig.onlyImage === false) {
         style['background-image'] = `url(${this.computedCoverImageSrc})`
       }
 

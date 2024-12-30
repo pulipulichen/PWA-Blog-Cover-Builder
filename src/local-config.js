@@ -19,6 +19,8 @@ Tuxedo`,
   debugZoom: 0.5,
   onlyImageVerticalAlign: 'bottom',
   onlyImageDirection: 'landscape',
+
+  onlyImage: false,
 }
 
 // ----------------------------------------------------------------
